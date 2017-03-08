@@ -9,8 +9,3 @@ def printprimenumbers(n):
             print(x)
 
 printprimenumbers(20)
-
-
-
-
-	
