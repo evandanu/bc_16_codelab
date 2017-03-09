@@ -1,11 +1,14 @@
-import requests
+from urlib.request import urlopen
 
-print ("Your direction is")
+import json
 
-origin= input ("Enter your origin")
+def know_distance():
+	distance_url="https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyDGaCLRyVSyqbqyMJ6KOtKPjJWQB4wyn4I"
+	request=urlopen(distance_url)
+	read=request.read().decode("utf")
+	json_object=json.loads(read)
+	print(json.dumps(json_object))
 
-destination=input ("Enter your destination")
+know_distance()
 
-direction=direction.get("https://maps.googleapis.com/maps/api/directions/json?origin=Toronto&destination=Montreal&key=AIzaSyDGaCLRyVSyqbqyMJ6KOtKPjJWQB4wyn4I")
 
-print response.json()
